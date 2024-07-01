@@ -61,6 +61,13 @@
         android:layout_margin="30px"
         android:id="@+id/add"
         />
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View all"
+        android:background="@drawable/friendapp"
+        android:layout_margin="30px"
+        android:id="@+id/view"
+        />
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.logscan.friendapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.PixelCopy;
 import android.view.View;
@@ -25,7 +26,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     EditText ed1, ed2, ed3, ed4;
-    AppCompatButton b1;
+    AppCompatButton b1,b2;
 
     String apiUrl = "https://friendsapi-re5a.onrender.com/adddata";
 
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         ed3 = (EditText) findViewById(R.id.nickname);
         ed4 = (EditText) findViewById(R.id.description);
         b1 = (AppCompatButton) findViewById(R.id.add);
-
+        b2=  (AppCompatButton) findViewById(R.id.view);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
                 );
                 RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
                 requestQueue.add(jasonObjectRequest);
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(), viewAll.class);
+                startActivity(i);
             }
         });
     }
